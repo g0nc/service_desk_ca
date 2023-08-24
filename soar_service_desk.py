@@ -266,87 +266,7 @@ def create_request(sid, user, resource_affected, summary, description, type_req)
         
         #configura grupo / classificacao por alarme #####
         
-        if re.search(r"ALM0001", description):
-          group = "USTI - SOC"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
         
-        elif re.search(r"ALM002", description):
-          group = "UAC - SISO Windows Infra"
-          pcat = "TI.Ambiente.PCI.Login suspeito em Jumpserver Windows com credencial"
-          resource = "Ambiente PCI"
-        
-        elif re.search(r"ALM0003", description):
-          group = "UDS - Comercio Eletronico"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0004", description):
-          group = "USTI - SOC - TELETEX"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0005", description):
-          group = "UAC - Suporte a Arquitetura de Cloud Computing"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0006", description):
-          group = "USTI - SIEM"
-          pcat = "TI.Equipamento.Appliance.Alerta/Falha"
-          resource = "Controle do ambiente SIEM"
-          
-        elif re.search(r"ALM0007", description):
-          group = "UAC - SISO Windows Infra"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0008", description):
-          group = "UAC- Suporte APM"
-          pcat = "TI.Ambiente.PCI.Falha Login"
-          resource = "BDN"
-          
-        elif re.search(r"ALM0009", description):
-          group = "UAC - SISO Windows Infra"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0010", description):
-          group = "USTI - SOC - TELETEX"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0011", description):
-          group = "USTI - SOC - TELETEX"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        elif re.search(r"ALM0012", description):
-          group = "USTI - SOC"
-          pcat = "TI.Ambiente Externo.Varia"
-          resource = "Variacao de Eventos Anti-DDoS"
-          
-        elif re.search(r"ALM0013", description):
-          group = "USTI - SOC"
-          pcat = ".Anomalia SOC"
-          resource = "Anomalia SOC"
-          
-        elif re.search(r"ALM0014", description):
-          group = "USTI - SOC"
-          pcat = "TI.Ambiente Externo.Erro de classific"
-          resource = "Controle de Blacklist"
-          
-        elif re.search(r"ALM0015", description):
-          group = "UAC - SISO Linux Infra"
-          pcat = "TI.Ambiente.PCI.Login suspeito em Jumpserver Linux com credencial"
-          resource = "Ambiente PCI"
-          
-        elif re.search(r"ALM0016", description):
-          group = "USTI - SOC - TELETEX"
-          pcat = "TI.Ambiente Externo.Alerta de Ciberataque"
-          resource = "Controle de Ciberataque"
-          
-        else:
           group_id = "5F009016BFC112479D118F80E24A0A8F"
         
         
@@ -502,7 +422,7 @@ if __name__ == "__main__":
 
         if args.create_request:
                 resource, summary, description, request_type = args.create_request
-                print(create_request(sid, "BFU101", resource, summary, description, request_type))
+                print(create_request(sid, "x", resource, summary, description, request_type))
         elif args.get_user_id:
                 username = args.get_user_id
                 print(get_user_id(sid, username))
